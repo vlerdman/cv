@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  Pdf_job:
+  Pdf_job: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,7 +9,6 @@ jobs:
       - run: sudo docker run --name=fedora fedora
       - run: sudo docker cp fedora:CV/main.pdf ./
       - uses: actions/upload-artifact@v2
-	with:
-	    name: main.pdf
-	    path: ./main.pdf
-
+        with:
+          name: main.pdf
+          path: ./main.pdf
