@@ -5,12 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build Pdf
       - run: sudo docker --tag fedora .
       - run: sudo docker run --name=fedora fedora
       - run: sudo docker cp fedora:CV/main.pdf ./
-      - name: 'Uploading Pdf'
-        uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
 	with:
 	    name: main.pdf
 	    path: ./main.pdf
