@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sudo docker --tag fedora .
+      - run: sudo docker build --tag fedora .
       - run: sudo docker run --name=fedora fedora
       - run: sudo docker cp fedora:CV/main.pdf ./
       - uses: actions/upload-artifact@v2
