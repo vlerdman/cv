@@ -13,7 +13,7 @@ jobs:
       - run: sudo docker --tag fedora .
       - run: sudo docker run --name=fedora fedora
       - run: sudo docker cp fedora:CV/main.pdf ./
-      - name: Uploading Pdf
+      - name: "Uploading Pdf"
 	uses: actions/upload-artifact@v2
 	with:
 	    name: main.pdf
