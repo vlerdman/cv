@@ -9,6 +9,13 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Building and running Dockerfile
-        uses: ./ # Uses an action in the root directory
+      - name: Build Pdf
+        run: sudo docker --tag fedora .
+	run: sudo docker run --name=fedora fedora
+	run: sudo docker cp fedora:CV/main.pdf ./
+      - name: Uploading Pdf
+	uses: actions/upload-artifact@v2
+	with:
+	    name: main.pdf
+	    path: ./main.pdf
 

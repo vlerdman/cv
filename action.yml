@@ -1,7 +1,0 @@
-# action.yml
-name: 'DockerFile start'
-description: 'Building and running of Dockerfile - building pdf from tex'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-
