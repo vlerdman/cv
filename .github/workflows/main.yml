@@ -7,6 +7,10 @@ jobs:
         with:
           ref: CV_holder
       - run: rm -f main.pdf
+      - uses: EndBug/add-and-commit@v7.5.0
+        with:
+          branch: CV_holder
+          message: 'clear CV'
       - uses: actions/checkout@v2
       - run: sudo docker build --tag fedora .
       - run: sudo docker run --name=fedora fedora
