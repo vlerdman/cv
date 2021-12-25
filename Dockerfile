@@ -10,6 +10,6 @@ RUN sudo dnf install -y 'tex(fullpage.sty)'
 
 COPY CV /CV
 
-RUN sudo pdflatex -interaction=nonstopmode -output-directory=CV CV/main.tex
+RUN sudo pdflatex -interaction=nonstopmode -output-directory=CV CV/resume.tex
 
 CMD [ "bash" ]

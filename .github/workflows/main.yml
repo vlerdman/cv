@@ -6,7 +6,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: CV_holder
-      - run: rm -f main.pdf
+      - run: rm -f resume.pdf
       - uses: EndBug/add-and-commit@v7.5.0
         with:
           branch: CV_holder
@@ -14,13 +14,13 @@ jobs:
       - uses: actions/checkout@v2
       - run: sudo docker build --tag fedora .
       - run: sudo docker run --name=fedora fedora
-      - run: sudo docker cp fedora:CV/main.pdf ./
+      - run: sudo docker cp fedora:CV/resume.pdf ./
       - uses: actions/upload-artifact@v2
         with:
-          name: main.pdf
-          path: ./main.pdf
+          name: resume.pdf
+          path: ./resume.pdf
       - uses: EndBug/add-and-commit@v7.5.0
         with:
-          add: './main.pdf'
+          add: './resume.pdf'
           branch: CV_holder
           message: 'update CV'
