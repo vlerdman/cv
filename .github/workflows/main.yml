@@ -1,17 +1,12 @@
 on: [push]
-
 jobs:
-  Pdf_job: 
+  CV-job: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-	with:
-	 ref: CV_holder
-      - run: rm -f main.pdf
-      - uses: EndBug/add-and-commit@v7.5.0
         with:
-          branch: CV_holder
-          message: 'clear branch'
+          ref: CV_holder
+      - run: rm -f main.pdf
       - uses: actions/checkout@v2
       - run: sudo docker build --tag fedora .
       - run: sudo docker run --name=fedora fedora
@@ -24,4 +19,4 @@ jobs:
         with:
           add: './main.pdf'
           branch: CV_holder
-          message: 'upload CV'
+          message: 'update CV'
